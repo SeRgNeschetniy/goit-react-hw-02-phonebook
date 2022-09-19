@@ -3,6 +3,7 @@ import { Component } from 'react';
 import FormAddContacts from './ContactForm/ContactForm';
 import PhoneBookList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
+import { Container } from './PhoneBook.module';
 
 export default class PhoneBook extends Component {
   state = {
@@ -79,7 +80,7 @@ export default class PhoneBook extends Component {
     const contacts = this.getFilteredContacts();
 
     return (
-      <>
+      <Container>
         <div className="block">
           <h1>PhoneBook</h1>
           <FormAddContacts addContact={addContact} />
@@ -89,7 +90,7 @@ export default class PhoneBook extends Component {
           <Filter filter={filter} handleChange={handleChange} />
           <PhoneBookList items={contacts} removeContact={removeContact} />
         </div>
-      </>
+      </Container>
     );
   }
 }
